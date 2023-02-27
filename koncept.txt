@@ -1,0 +1,6 @@
+obsługa myszy 
+framerate
+pierszeństwo
+akcje
+kulka - przekazanie energii zamienieine sie w kamien
+
