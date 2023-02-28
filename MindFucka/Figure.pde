@@ -1,7 +1,7 @@
 class Figure {
 
   PVector position;
-  InstructionManager instructionManager = new InstructionManager();
+  InstructionManager instructionManager = new InstructionManager(this);
   
   // Moving
   void moveByVector(PVector vec) {
@@ -22,5 +22,11 @@ class Figure {
   
   void moveLeft() {
     moveByVector(new PVector(-1, 0));
+  }
+  
+  
+  // Wykonaj polecenie z list
+  void tick() {
+    instructionManager.tick();
   }
 }

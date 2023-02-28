@@ -8,6 +8,10 @@ interface Instruction {
 class InstructionManager {
   Figure figure;
   
+  InstructionManager(Figure _figure) {
+    figure = _figure;
+  }
+  
   // Instrukcje w tej liście są wykonywane na samym początku i wszystkie na raz
   ArrayList<Instruction> together = new ArrayList<Instruction>();
   // Instrukcje dane przez inne figury
