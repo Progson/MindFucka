@@ -1,6 +1,6 @@
 class Figure {
 
-  PVector position;
+  PVector position = new PVector(5,6);
   InstructionManager instructionManager = new InstructionManager(this);
   
   // Moving
