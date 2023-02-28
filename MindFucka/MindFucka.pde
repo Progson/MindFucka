@@ -11,10 +11,12 @@ void setup() {
   background(#1FA09C);
   gameBoard = new GameBoard(leftTopCornerOfGameBoard, sizeOfGameBoard, numOfGridsInGameBoard);
   gameBoard.setBoard();
-
+  
+  frameRate(1);
 }
 
 void draw() {
   gameBoard.displayGameBoard();
   gameBoard.displayFigures();
+  gameBoard.tickFigures();
 }

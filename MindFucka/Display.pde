@@ -12,7 +12,21 @@ class GameBoard {
     this.sizeOfCell.y = size.y/numOfGrids.y;
   }
   void setBoard() {
-    figures.add(new Figure());
+    {
+      Figure new_figure = new Figure();
+      
+      new_figure.position = new PVector(4, 0);
+    
+      new_figure.instructionManager.starting.add(new UpInstruction());
+      new_figure.instructionManager.starting.add(new UpInstruction());
+      new_figure.instructionManager.starting.add(new UpInstruction());
+      new_figure.instructionManager.starting.add(new UpInstruction());
+      new_figure.instructionManager.starting.add(new UpInstruction());
+    
+      new_figure.active = true;
+    
+      figures.add(new_figure);
+    }
   }
   void displayGameBoard() {
     strokeWeight(4);
@@ -35,7 +49,21 @@ class GameBoard {
       ellipse(positionOfFigure.x, positionOfFigure.y, sizeOfCell.x*0.8, sizeOfCell.y*0.8);
     }
   }
+  void tickFigures() {
+    for (Figure i : figures) {
+      i.tick();
+    }
+  }
   PVector callculatePosition(PVector relativePostion) {
     return new PVector(leftTopCorner.x + relativePostion.x * sizeOfCell.x + sizeOfCell.x/2, leftTopCorner.y+size.y - relativePostion.y * sizeOfCell.y - sizeOfCell.y/2);
+  }
+  ArrayList<Figure> getFiguresInPosition(PVector position) {
+    ArrayList<Figure> ret = new ArrayList<Figure>();
+    
+    for (Figure i : figures) {
+      if (position.x == i.position.x && position.y == i.position.y) ret.add(i);
+    }
+    
+    return ret;
   }
 }
