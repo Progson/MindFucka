@@ -11,8 +11,5 @@ class GameBoard {
     strokeWeight(30);
     fill(#B2B2B2);
     rect(leftTopCorner.x, leftTopCorner.y, size.x, size.y);
-    
   }
-  
-  
 }
