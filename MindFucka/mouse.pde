@@ -10,7 +10,7 @@ void mousePressed(){
   
 }
 void mouseMoved(){
-    isMousePressed = false;
+    buttons.hover();
 }
 void mouseDragged(){
 
