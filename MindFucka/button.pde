@@ -26,6 +26,7 @@ class Start extends Button {
   Start(PVector _leftTop, PVector _size) {
     super(_leftTop, _size);
     colorOfButton = #FC6647;
+    currentColor = colorOfButton;
     colorOfHoveredButton = #F2DAD5;
     text = "START!";
   }
@@ -43,6 +44,8 @@ class Start extends Button {
   void hover(){
     if(checkIfMouseIsOverButton()){
         currentColor = colorOfHoveredButton;
+      return;
     }
+    currentColor = colorOfButton;
   }
 }
