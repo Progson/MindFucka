@@ -17,11 +17,11 @@ void setup() {
   
   gameBoard = new GameBoard(leftTopCornerOfGameBoard, sizeOfGameBoard, numOfGridsInGameBoard);
   gameBoard.setBoard();
-  
 }
 
 void draw() {
   gameBoard.displayGameBoard();
   gameBoard.displayFigures();
   buttons.display();
+  gameBoard.tickFigures();
 }
