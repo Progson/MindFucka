@@ -1,9 +1,9 @@
 class Figure {
 
-  PVector position;
+  PVector position = new PVector(0, 0);
   InstructionManager instructionManager = new InstructionManager(this);
   
-  // Moving
+  // Ruch
   void moveByVector(PVector vec) {
     position.add(vec);
   }
