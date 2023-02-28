@@ -1,4 +1,5 @@
 GameBoard gameBoard;
+
   PVector leftTopCornerOfGameBoard;
   PVector sizeOfGameBoard;
   PVector numOfGridsInGameBoard;
@@ -10,7 +11,9 @@ void setup(){
     numOfGridsInGameBoard = new PVector(64,48);
     background(#1FA09C);
     gameBoard = new GameBoard(leftTopCornerOfGameBoard,sizeOfGameBoard,numOfGridsInGameBoard);
+    gameBoard.setBoard();
 }
 void draw(){
     gameBoard.displayGameBoard();
+    gameBoard.displayFigures();
 }
