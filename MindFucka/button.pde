@@ -6,23 +6,27 @@ class Button {
   PVector leftTop = new PVector(0, 0);
   PVector rightBottom = new PVector(200, 200);
   PVector size = new PVector(0, 0);
+  boolean draggable = false;
+
 
   Button( PVector leftTop, PVector size) {
     this.leftTop = leftTop;
     this.size = size;
     this.rightBottom =  new PVector( leftTop.x + size.x, leftTop.y + size.y);
   }
-  boolean checkIfMouseIsOverButton() {
-    return isMouseOver(leftTop, rightBottom);
-  }
-
-  void action(){};
-  void display(){};
-  void hover(){};
+  
+  void clickAction() {
+  };
+  void display() {
+  };
+  void hover() {
+  };
+  void dragAction() {
+  };
 }
 
 class Start extends Button {
-  
+
   Start(PVector _leftTop, PVector _size) {
     super(_leftTop, _size);
     colorOfButton = #FC6647;
@@ -30,22 +34,48 @@ class Start extends Button {
     colorOfHoveredButton = #F2DAD5;
     text = "START!";
   }
-  void action() {
+  void clickAction() {
     print("klikniete");
   }
   void display() {
     fill(currentColor);
     rect(leftTop.x, leftTop.y, size.x, size.y);
     fill(#F1EDF2);
-    textAlign(CENTER,CENTER);
+    textAlign(CENTER, CENTER);
     textSize(48);
     text(text, leftTop.x + size.x/2, leftTop.y + size.y/2);
   }
-  void hover(){
-    if(checkIfMouseIsOverButton()){
-        currentColor = colorOfHoveredButton;
-      return;
-    }
+  void hover() {
+    currentColor = colorOfHoveredButton;
     currentColor = colorOfButton;
+  }
+}
+class FigureButton extends Button {
+
+  FigureButton(PVector _leftTop, PVector _size) {
+    super(_leftTop, _size);
+    colorOfButton = #FC6647;
+    currentColor = colorOfButton;
+    colorOfHoveredButton = #F2DAD5;
+    text = "START!";
+  }
+  void clickAction() {
+    print("klikniete");
+  }
+  void display() {
+    fill(currentColor);
+    rect(leftTop.x, leftTop.y, size.x, size.y);
+    fill(#F1EDF2);
+    textAlign(CENTER, CENTER);
+    textSize(48);
+    text(text, leftTop.x + size.x/2, leftTop.y + size.y/2);
+  }
+  void hover() {
+    currentColor = colorOfHoveredButton;
+    currentColor = colorOfButton;
+  }
+  void dragAction() {
+    if (draggable) {
+    }
   }
 }

@@ -3,6 +3,9 @@ PVector leftTopCornerOfGameBoard;
 PVector sizeOfGameBoard;
 PVector numOfGridsInGameBoard;
 Buttons buttons;
+enum TypesOfFigures{
+  Arrow;
+};
 
 void setup() {
   size(800, 800);
@@ -20,8 +23,10 @@ void setup() {
 }
 
 void draw() {
+  background(#1FA09C);
   gameBoard.displayGameBoard();
   gameBoard.displayFigures();
   buttons.display();
   gameBoard.tickFigures();
+  ellipse(mousePressedPosition.x,  mousePressedPosition.y,50,50);
 }

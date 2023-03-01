@@ -1,3 +1,9 @@
+//mozna pomyslec nad zrobieniem obiektu typu set instrukcji i potem w instrukt menagrze zrobić funkcje typu dodawanie setu kasowanie setu
+//i wtedy insturktionManager nie miałby w sobie array listów tylko sety instrukcji.
+//dzięki temu moglibyśmy zrobić sety instrukcji do każdej figury i wygodnie by sie je potem tworzyło na zasadzie dodaj set odpowiadający typowi figury, a jakbysmy
+//chcieli zrobic figure co jest kamieniem a zachowuje sie jakos inaczej to moglibysmy mu ustawiac customowe sety. wydaje mi sie elegancki pomysl
+//btw jest 02:41 pozdrawiam.
+
 // Interfejs do poleceń wykonywanych przez figury
 // Każde polecenie musi implementować ten interfejs
 interface Instruction {

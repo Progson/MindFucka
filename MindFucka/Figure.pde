@@ -1,4 +1,5 @@
 class Figure {
+  
   PVector position = new PVector(0, 0);
   InstructionManager instructionManager = new InstructionManager(this);
   
