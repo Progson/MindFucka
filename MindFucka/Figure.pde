@@ -1,7 +1,18 @@
 class Figure {
-  
   PVector position = new PVector(0, 0);
   InstructionManager instructionManager = new InstructionManager(this);
+  
+  void addTogether(Instruction i) {
+    instructionManager.together.add(i);
+  }
+  
+  void addGiven(Instruction i) {
+    instructionManager.given.add(i);
+  }
+  
+  void addStarting(Instruction i) {
+    instructionManager.starting.add(i);
+  }
   
   // Czy figura wykonuje polecenia - jest aktywna
   boolean active = false;

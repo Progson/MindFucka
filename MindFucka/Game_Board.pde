@@ -26,11 +26,11 @@ class GameBoard {
       
       new_figure.position = new PVector(4, 0);
     
-      new_figure.instructionManager.starting.add(new UpInstruction());
-      new_figure.instructionManager.starting.add(new UpInstruction());
-      new_figure.instructionManager.starting.add(new UpInstruction());
-      new_figure.instructionManager.starting.add(new UpInstruction());
-      new_figure.instructionManager.starting.add(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
     
       new_figure.active = true;
     
