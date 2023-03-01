@@ -4,7 +4,9 @@ class Buttons {
   }
   void setupButtons() {
     Start start = new Start(new PVector(100, 550), new PVector(200, 100));
+    FigureButton arrow = new FigureButton(new PVector(20, 100), new PVector(40, 40));
     this.buttons.add(start);
+    this.buttons.add(arrow);
   }
   boolean checkIfMouseIsOverButton(Button given) {
     return isMouseOver(given.leftTop, given.rightBottom);
@@ -18,14 +20,16 @@ class Buttons {
   }
   void hover() { // po ruszeniu myszy
     for (Button i : this.buttons) {
-       if (checkIfMouseIsOverButton(i)) {
+      if (checkIfMouseIsOverButton(i)) {
         i.hover();
+      } else {
+        i.noHover();
       }
     }
   }
   void dragged() { // pokliknieciu myszy
     for (Button i : this.buttons) {
-       if (checkIfMouseIsOverButton(i)) {
+      if (checkIfMouseIsOverButton(i)) {
         i.dragAction();
       }
     }
