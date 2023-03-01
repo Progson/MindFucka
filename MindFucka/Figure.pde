@@ -21,7 +21,9 @@ class Figure {
     }
     */
     
+    gameBoard.board[int(position.x)][int(position.y)] = null;
     position = changed_position;
+    gameBoard.board[int(position.x)][int(position.y)] = this;
   }
   
   void moveUp() {

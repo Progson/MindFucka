@@ -4,12 +4,21 @@ class GameBoard {
   PVector numOfGrids = new PVector();
   PVector sizeOfCell = new PVector();
   ArrayList<Figure> figures = new ArrayList<Figure>();
+  Figure[][] board;
   GameBoard(PVector leftTopCorner, PVector size, PVector numOfGrids) {
     this.leftTopCorner = leftTopCorner;
     this.size = size;
     this.numOfGrids = numOfGrids;
     this.sizeOfCell.x = size.x/numOfGrids.x;
     this.sizeOfCell.y = size.y/numOfGrids.y;
+    
+    board = new Figure[int(numOfGrids.x)][int(numOfGrids.y)];
+  }
+  void addFigure(Figure f) {
+    figures.add(f);
+    
+    if (board[int(f.position.x)][int(f.position.y)] == null)
+      board[int(f.position.x)][int(f.position.y)] = f;
   }
   void setBoard() {
     {
@@ -25,7 +34,7 @@ class GameBoard {
     
       new_figure.active = true;
     
-      figures.add(new_figure);
+      addFigure(new_figure);
     }
   }
   void displayGameBoard() {
