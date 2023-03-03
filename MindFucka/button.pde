@@ -23,8 +23,6 @@ class Button {
   };
   void noHover() {
   };
-  void dragAction() {
-  };
 }
 
 class Start extends Button {
