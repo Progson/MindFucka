@@ -40,16 +40,14 @@ class InstructionManager {
       // Jeżeli w `together` nie było poleceń, ale w `given` są, wykonaj jedno
       if (given.size() != 0) {
         Instruction i = given.get(0);
-        i.call(figure);
-
         given.remove(0);
+        i.call(figure);
       }
       // Jeżeli w poprzednich listach nie było poleceń, to wykonaj polecenie z `starting`
       else if (starting.size() != 0) {
         Instruction i = starting.get(0);
-        i.call(figure);
-
         starting.remove(0);
+        i.call(figure);
       }
     }
   }
