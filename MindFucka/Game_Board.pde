@@ -75,4 +75,8 @@ class GameBoard {
     
     return ret;
   }
+  boolean isInsideBoard(PVector position) {
+    return  (position.x >= 0 && position.x < numOfGrids.x) &&
+            (position.y >= 0 && position.y < numOfGrids.y);
+  }
 }
