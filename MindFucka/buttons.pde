@@ -27,13 +27,6 @@ class Buttons {
       }
     }
   }
-  void dragged() { // pokliknieciu myszy
-    for (Button i : this.buttons) {
-      if (checkIfMouseIsOverButton(i)) {
-        i.dragAction();
-      }
-    }
-  }
   void display() {
     for (Button i : this.buttons) {
       i.display();
