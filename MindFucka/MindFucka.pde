@@ -20,6 +20,8 @@ void setup() {
   
   gameBoard = new GameBoard(leftTopCornerOfGameBoard, sizeOfGameBoard, numOfGridsInGameBoard);
   gameBoard.setBoard();
+  
+  frameRate(1);
 }
 
 void draw() {

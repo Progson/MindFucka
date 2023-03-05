@@ -31,8 +31,19 @@ class GameBoard {
       new_figure.addStarting(new UpInstruction());
       new_figure.addStarting(new UpInstruction());
       new_figure.addStarting(new UpInstruction());
+      new_figure.addStarting(new UpInstruction());
     
       new_figure.active = true;
+    
+      addFigure(new_figure);
+    }
+    {
+      Figure new_figure = new Figure();
+      
+      new_figure.position = new PVector(4, 4);
+    
+      new_figure.addStarting(new RightInstruction());
+      new_figure.addStarting(new RightInstruction());
     
       addFigure(new_figure);
     }

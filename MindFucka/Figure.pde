@@ -49,10 +49,25 @@ class Figure {
       f.instructionManager.together.add(new MoveByVectorInstruction(vec));
     }
     */
-    
-    gameBoard.board[int(position.x)][int(position.y)] = null;
-    position = changed_position;
-    gameBoard.board[int(position.x)][int(position.y)] = this;
+    Figure figure_in_new_position = gameBoard.board[int(changed_position.x)][int(changed_position.y)];
+    if (figure_in_new_position == null) {
+      // Nie ma kolizji, nowe miejsce jest puste
+      gameBoard.board[int(position.x)][int(position.y)] = null;
+      position = changed_position;
+      gameBoard.board[int(position.x)][int(position.y)] = this;
+    }
+    else {
+      // Jest kolizja
+      figure_in_new_position.addGiven(instructionManager.starting);
+      figure_in_new_position.addGiven(instructionManager.given);
+      
+      instructionManager.starting.clear();
+      instructionManager.given.clear();
+      
+      activateNeighbours();
+      
+      active = false;
+    }
   }
   
   void moveUp() {
