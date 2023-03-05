@@ -40,15 +40,6 @@ class Figure {
     PVector changed_position = position.copy().add(vec);
     
     // Kolizje
-    // Jeżeli nie czujesz się na siłach - NAWET NIE PRÓBUJ TEGO NAPISAĆ
-    // Licznik prób: 1
-    /*
-    ArrayList<Figure> collided = gameBoard.getFiguresInPosition(changed_position);
-    
-    for (Figure f : collided) {
-      f.instructionManager.together.add(new MoveByVectorInstruction(vec));
-    }
-    */
     Figure figure_in_new_position = gameBoard.board[int(changed_position.x)][int(changed_position.y)];
     if (figure_in_new_position == null) {
       // Nie ma kolizji, nowe miejsce jest puste
