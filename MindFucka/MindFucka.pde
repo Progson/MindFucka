@@ -3,6 +3,7 @@ PVector leftTopCornerOfGameBoard;
 PVector sizeOfGameBoard;
 PVector numOfGridsInGameBoard;
 Buttons buttons;
+FigureSetupManager fsm;
 enum TypesOfFigures{
   Arrow;
 };
@@ -14,6 +15,8 @@ void setup() {
   leftTopCornerOfGameBoard = new PVector(100, 100);
   sizeOfGameBoard = new PVector(600, 400);
   numOfGridsInGameBoard = new PVector(15, 10);
+  
+  fsm = new FigureSetupManager();
   
   buttons = new Buttons();
   buttons.setupButtons();

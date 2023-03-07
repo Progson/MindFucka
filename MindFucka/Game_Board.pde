@@ -21,32 +21,8 @@ class GameBoard {
       board[int(f.position.x)][int(f.position.y)] = f;
   }
   void setBoard() {
-    {
-      Figure new_figure = new Figure();
-      
-      new_figure.position = new PVector(4, 0);
-    
-      new_figure.addStarting(new UpInstruction());
-      new_figure.addStarting(new UpInstruction());
-      new_figure.addStarting(new UpInstruction());
-      new_figure.addStarting(new UpInstruction());
-      new_figure.addStarting(new UpInstruction());
-      new_figure.addStarting(new UpInstruction());
-    
-      new_figure.active = true;
-    
-      addFigure(new_figure);
-    }
-    {
-      Figure new_figure = new Figure();
-      
-      new_figure.position = new PVector(4, 4);
-    
-      new_figure.addStarting(new RightInstruction());
-      new_figure.addStarting(new RightInstruction());
-    
-      addFigure(new_figure);
-    }
+    fsm.addArrow(Direction.up, 6, new PVector(4, 0), true);
+    fsm.addArrow(Direction.right, 2, new PVector(4, 4), false);
   }
   void displayGameBoard() {
     strokeWeight(4);
