@@ -63,7 +63,7 @@ class GameBoard {
   void displayFigures() {
     for (Figure i : figures) {
       PVector positionOfFigure = new PVector();
-      positionOfFigure = callculatePosition(i.position);
+      positionOfFigure = calculatePosition(i.position);
       strokeWeight(2);
       fill(#B2B2B2);
       ellipse(positionOfFigure.x, positionOfFigure.y, sizeOfCell.x*0.8, sizeOfCell.y*0.8);
@@ -74,7 +74,7 @@ class GameBoard {
       i.tick();
     }
   }
-  PVector callculatePosition(PVector relativePostion) {
+  PVector calculatePosition(PVector relativePostion) {
     return new PVector(leftTopCorner.x + relativePostion.x * sizeOfCell.x + sizeOfCell.x/2, leftTopCorner.y+size.y - relativePostion.y * sizeOfCell.y - sizeOfCell.y/2);
   }
   ArrayList<Figure> getFiguresInPosition(PVector position) {

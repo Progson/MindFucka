@@ -11,15 +11,15 @@ class Buttons {
   boolean checkIfMouseIsOverButton(Button given) {
     return isMouseOver(given.leftTop, given.rightBottom);
   }
-  void clicked() { // pokliknieciu myszy
-    for (Button i : this.buttons) {
+  void clicked() { // po kliknieciu myszy
+    for (Button i : buttons) {
       if (checkIfMouseIsOverButton(i)) {
         i.clickAction();
       }
     }
   }
   void hover() { // po ruszeniu myszy
-    for (Button i : this.buttons) {
+    for (Button i : buttons) {
       if (checkIfMouseIsOverButton(i)) {
         i.hover();
       } else {
@@ -28,7 +28,7 @@ class Buttons {
     }
   }
   void display() {
-    for (Button i : this.buttons) {
+    for (Button i : buttons) {
       i.display();
     }
   }
